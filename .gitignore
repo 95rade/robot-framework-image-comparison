@@ -1,0 +1,4 @@
+**/*.xml
+**/*.html
+**/.DS_Store
+**/*.pyc
