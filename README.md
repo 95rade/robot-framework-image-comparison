@@ -9,6 +9,7 @@ The implementation of this keyword is based on the possibility to execute a syst
     The complete example can be found from GitHub: https://github.com/ThomasJaspers/robot-framework-image-comparison.
 
 The following listing shows the implementation of the keyword. The keyword is implemented in a separate resource file that can be used in one’s own projects right away (aside from adjustments depending on the used operating system).
+
 `
 *** Settings ***
 Library   String
@@ -29,6 +30,7 @@ Compare Images
    ${RESULT}        Evaluate    ${OUTPUT} < ${Allowed_Threshold}
    Should be True   ${RESULT}
 `
+
 The variable ${IMAGE_COMPARATOR_COMMAND} defines the command to be executed for the image comparison. It contains placeholders for the concrete path information to the images to be compared. Those are replaced in the command string with the path values given as parameters and the resulting command string is logged out for troubleshooting purposes.
 
     This approach should allow to easily adept this keyword for other operating systems. The idea is that only the command defined in ${IMAGE_COMPARATOR_COMMAND} needs to be changed to fit the underlying operating system.
